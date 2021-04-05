@@ -28,6 +28,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-fugitive'
+Plug 'preservim/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 colorscheme gruvbox
+map <silent> <C-n> :NERDTreeFocus<CR>
