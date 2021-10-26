@@ -19,7 +19,7 @@ set colorcolumn=80
 set signcolumn=yes
 
 " Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -51,6 +51,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " File Explorer
 Plug 'preservim/nerdtree'
 
+" Discord Rich Presence
+Plug 'andweeb/presence.nvim'
+
 call plug#end()
 
 colorscheme gruvbox
@@ -59,8 +62,12 @@ let mapleader = " "
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>b :NERDTreeFocus<CR>
+nmap <leader>gb <C-^><cr>
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <leader>rf :%! rustfmt<CR>
 " C-t open file in new tab, C-x open horizontally, C-v open vertically
 
 autocmd BufWritePre * %s/\s\+$//e
